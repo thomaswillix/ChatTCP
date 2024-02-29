@@ -27,7 +27,7 @@ public class Server implements Runnable{
                 connections.add(handler);
                 pool.execute(handler);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             shutdown();
         }
 
@@ -72,7 +72,7 @@ public class Server implements Runnable{
                 out.println("Please enter a nickname: ");
                 nickname = in.readLine();
                 System.out.println(nickname + " connected");
-                broadcast(nickname + "joined the chat!");
+                broadcast(nickname + " joined the chat!");
                 String message;
                 while ((message = in.readLine()) != null){
                     if (message.startsWith("/nick ")){
