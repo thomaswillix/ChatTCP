@@ -45,6 +45,7 @@ public class Server implements Runnable{
     public void shutdown(){
         try {
             done = true;
+            pool.shutdown();
             if (!server.isClosed()) {
                 server.close();
             }
@@ -87,6 +88,7 @@ public class Server implements Runnable{
                         }
                     } else if (message.startsWith("/quit")) {
                         broadcast(nickname + " left the chat!");
+                        System.out.println(nickname + " left the chat");
                         shutdown();
                     } else{
                         broadcast(nickname + ": " + message);

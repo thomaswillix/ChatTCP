@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Server done">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Chat works&#10;working on commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cliente/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cliente/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cliente/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servidor/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servidor/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +108,7 @@
       <workItem from="1708880030062" duration="2000" />
       <workItem from="1708889390538" duration="132000" />
       <workItem from="1709232337948" duration="19000" />
-      <workItem from="1709233436278" duration="5661000" />
+      <workItem from="1709233436278" duration="6615000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -127,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709239091532</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Chat works&#10;working on commands">
+      <option name="closed" value="true" />
+      <created>1709240412645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709240412645</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Server done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server done" />
+    <MESSAGE value="Chat works&#10;working on commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat works&#10;working on commands" />
   </component>
 </project>
