@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -12,6 +13,7 @@ public class Server implements Runnable{
     private ServerSocket server;
     private boolean done;
     private ExecutorService pool;
+    private List<String> users = new ArrayList<>();
     public Server (){
         connections = new ArrayList<>();
         done = false;
@@ -71,18 +73,13 @@ public class Server implements Runnable{
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 out.println("Please enter a nickname: ");
-                nickname = in.readLine();
-                System.out.println(nickname + " connected");
-                broadcast(nickname + " joined the chat!");
+                validateUser(out, in);
                 String message;
                 while ((message = in.readLine()) != null){
                     if (message.startsWith("/nick ")){
                         String[] messageSplit  =  message.split(" ", 2);
                         if(messageSplit.length == 2){
-                            broadcast(nickname + " renamed themselves to " + messageSplit[1]);
-                            System.out.println(nickname + " renamed themselves to " + messageSplit[1]);
-                            nickname = messageSplit[1];
-                            out.println("Succesfully changed nickname to " + nickname);
+                            validateRename(messageSplit[1], out);
                         } else{
                             out.println("No nickname provided!");
                         }
@@ -100,6 +97,34 @@ public class Server implements Runnable{
 
         }
 
+        private void validateRename(String s, PrintWriter out) {
+            if(users.contains(s)){
+                out.println("User not available, it's already in use");
+            } else{
+                broadcast(nickname + " renamed themselves to " + s);
+                System.out.println(nickname + " renamed themselves to " + s);
+                nickname = s;
+                out.println("Succesfully changed nickname to " + nickname);
+            }
+        }
+
+        private void validateUser(PrintWriter out, BufferedReader in) {
+            try {
+                do {
+                    nickname = in.readLine();
+                    if(users.contains(nickname)){
+                        broadcast(nickname + " is not an available username as it is already in use!");
+                    }
+                }while (users.contains(nickname));
+                users.add(nickname);
+                System.out.println(nickname + " connected");
+                broadcast(nickname + " joined the chat!");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
         public void sendMessage(String message){
             out.println(message);
         }
@@ -108,6 +133,7 @@ public class Server implements Runnable{
             try {
                 in.close();
                 out.close();
+                users.remove(nickname);
                 if (!client.isClosed()) {
                     client.close();
                 }
