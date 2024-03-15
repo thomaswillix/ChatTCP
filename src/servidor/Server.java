@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 
 public class Server implements Runnable{
     private ArrayList<ConnectionHandler> connections;
-    private HashMap<Integer, String> messages = new HashMap<>();
+    private File f = new File("messages.txt");
     int messageCounter=0;
     private ServerSocket server;
     private boolean done;
@@ -43,8 +43,17 @@ public class Server implements Runnable{
         for (ConnectionHandler ch: connections) {
             if (ch != null){
                 ch.sendMessage(message);
-                messages.put(messageCounter, message);
+                saveMessage(message);
             }
+        }
+    }
+
+    private void saveMessage(String message) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+            bw.write(message);
+        } catch (IOException e) {
+            System.err.println("Sum' went wrong persisting");
         }
     }
 
@@ -132,7 +141,6 @@ public class Server implements Runnable{
 
         public void sendMessage(String message){
             out.println(message);
-
         }
 
         public void shutdown(){

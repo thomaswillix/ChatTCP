@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Chat works&#10;Commands work as well.">
+    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Messages&#10;Stored previous messages in a variable, still working on how they should be shown">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servidor/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servidor/Server.java" afterDir="false" />
     </list>
@@ -110,7 +111,8 @@
       <workItem from="1709233436278" duration="7316000" />
       <workItem from="1709243337376" duration="7000" />
       <workItem from="1710278283198" duration="625000" />
-      <workItem from="1710332840672" duration="1575000" />
+      <workItem from="1710332840672" duration="3094000" />
+      <workItem from="1710500255631" duration="580000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -144,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709241140230</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Messages&#10;Stored previous messages in a variable, still working on how they should be shown">
+      <option name="closed" value="true" />
+      <created>1710338534523</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710338534523</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +176,7 @@
     <MESSAGE value="Server done" />
     <MESSAGE value="Chat works&#10;working on commands" />
     <MESSAGE value="Chat works&#10;Commands work as well." />
-    <option name="LAST_COMMIT_MESSAGE" value="Chat works&#10;Commands work as well." />
+    <MESSAGE value="Messages&#10;Stored previous messages in a variable, still working on how they should be shown" />
+    <option name="LAST_COMMIT_MESSAGE" value="Messages&#10;Stored previous messages in a variable, still working on how they should be shown" />
   </component>
 </project>
