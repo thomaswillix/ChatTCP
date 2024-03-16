@@ -3,6 +3,7 @@ package servidor;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +89,10 @@ public class Server implements Runnable{
             try {
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                out.println("Please enter a nickname: ");
+                out.println("Hello!\nWelcome to the best chat ever!\n------------------------ INFO ------------------------\nWhenever you enter the chat you have to put your username and\n" +
+                        "optionally a Y indicating you want to read previous messages\nCommands:" +
+                        "\n   /nick 'newUsername':  to change your username\n   /quit:  to exit the chat\n");
+                out.println("Please enter a nickname : ");
                 validateUser(out, in);
                 String message;
                 while ((message = in.readLine()) != null){
@@ -107,6 +111,8 @@ public class Server implements Runnable{
                         broadcast(nickname + ": " + message);
                     }
                 }
+            } catch (SocketException e){
+                System.out.println("There was an Exception with a client");
             } catch (IOException e) {
                 shutdown();
             }
@@ -143,6 +149,8 @@ public class Server implements Runnable{
                 users.add(nickname);
                 System.out.println(nickname + " connected");
                 broadcast(nickname + " joined the chat!");
+            } catch (SocketException e){
+                System.out.println("No nickname provided");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
