@@ -50,8 +50,10 @@ public class Server implements Runnable{
 
     private void saveMessage(String message) {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(f, true));
             bw.write(message);
+            bw.newLine();
+            bw.close();
         } catch (IOException e) {
             System.err.println("Sum' went wrong persisting");
         }
@@ -101,7 +103,7 @@ public class Server implements Runnable{
                         broadcast(nickname + " left the chat!");
                         System.out.println(nickname + " left the chat");
                         shutdown();
-                    } else{
+                    } else {
                         broadcast(nickname + ": " + message);
                     }
                 }
@@ -126,13 +128,38 @@ public class Server implements Runnable{
             try {
                 do {
                     nickname = in.readLine();
+                    String watchMessages[] = nickname.split(" ");
+                    if (watchMessages.length > 1){
+                        nickname = watchMessages[0];
+                        String messages = watchMessages[1];
+                        if(messages.equalsIgnoreCase("Y")){
+                            showPrevoiusMesssages(out);
+                        }
+                    }
                     if(users.contains(nickname)){
-                        broadcast(nickname + " is not an available username as it is already in use!");
+                        out.println(nickname + " is not an available username as it is already in use!");
                     }
                 }while (users.contains(nickname));
                 users.add(nickname);
                 System.out.println(nickname + " connected");
                 broadcast(nickname + " joined the chat!");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        private void showPrevoiusMesssages(PrintWriter out) {
+            try {
+                out.println("------------------ These are the previous messages ------------------");
+                BufferedReader br = new BufferedReader(new FileReader(f));
+                String line;
+                try {
+                    while((line = br.readLine())!=null){
+                        out.println(line);
+                    }
+                }catch (EOFException e){
+                    br.close();
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

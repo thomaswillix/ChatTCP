@@ -29,13 +29,14 @@ public class Client implements Runnable{
                 System.out.println(inMessage);
             }
 
-        }catch (IOException e){
+        } catch (Exception e){
             shutdown();
         }
     }
 
 
     public void shutdown(){
+        out.println("/quit");
         done = true;
         try{
             in.close();
