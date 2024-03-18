@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Messages&#10;Now you can see previous messages and if you catch any exception you instantly quit">
+    <list default="true" id="fc5125db-01e4-44f5-87fe-a32a43770d8e" name="Changes" comment="Messages&#10;added info about the commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servidor/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servidor/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,21 +47,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/thoma/Desktop/ProcesosYServicios/ChatTCP",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Desktop/ProcesosYServicios/ChatTCP&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cliente.Client" />
@@ -119,7 +120,8 @@
       <workItem from="1710500255631" duration="2005000" />
       <workItem from="1710584614630" duration="5157000" />
       <workItem from="1710598703935" duration="1260000" />
-      <workItem from="1710608295411" duration="933000" />
+      <workItem from="1710608295411" duration="1578000" />
+      <workItem from="1710777528896" duration="2470000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -177,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710598060029</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Messages&#10;added info about the commands">
+      <option name="closed" value="true" />
+      <created>1710611095461</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710611095461</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,17 +212,7 @@
     <MESSAGE value="Messages&#10;Stored previous messages in a variable, still working on how they should be shown" />
     <MESSAGE value="Messages&#10;Stored previous messages in a .txt, still working on how they should be shown" />
     <MESSAGE value="Messages&#10;Now you can see previous messages and if you catch any exception you instantly quit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages&#10;Now you can see previous messages and if you catch any exception you instantly quit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/servidor/Server.java</url>
-          <line>195</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Messages&#10;added info about the commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Messages&#10;added info about the commands" />
   </component>
 </project>

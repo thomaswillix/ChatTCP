@@ -13,7 +13,6 @@ import java.util.concurrent.Executors;
 public class Server implements Runnable{
     private ArrayList<ConnectionHandler> connections;
     private File f = new File("messages.txt");
-    int messageCounter=0;
     private ServerSocket server;
     private boolean done;
     private ExecutorService pool;
@@ -40,13 +39,12 @@ public class Server implements Runnable{
     }
 
     public void broadcast(String message){
-        messageCounter++;
         for (ConnectionHandler ch: connections) {
             if (ch != null){
                 ch.sendMessage(message);
-                saveMessage(message);
             }
         }
+        saveMessage(message);
     }
 
     private void saveMessage(String message) {
