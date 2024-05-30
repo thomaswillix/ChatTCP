@@ -1,7 +1,7 @@
 ## TCP Chat
 **Servidor TCP (`Server.java`)**:
 
-    ```java
+```java
     public class Server implements Runnable {
         private ArrayList<ConnectionHandler> connections;
         private File f = new File("messages.txt");
@@ -14,7 +14,7 @@
             connections = new ArrayList<>();
             done = false;
         }
-    ```
+```
 
 - **Atributos**:
   - `connections`: Lista de manejadores de conexiones activas.
